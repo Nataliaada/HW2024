@@ -22,3 +22,9 @@ def hashable(value):
 args_dict = create_dict(a=10, b='hello', c=[1, 2, 3], d={'key': 'value'})
 
 print(args_dict)
+
+
+def func_key(**kwargs):
+    return {v if v.__hesh__ is not None else str(v):k for k, v in kwargs.item()}
+print(func_key(arg1=10, arg2= 'hello', arg3 = [1, 2, 3], arg4= {'key': 'value'}))
+    
